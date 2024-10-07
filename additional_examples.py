@@ -4,16 +4,32 @@
 
 
 def sum_positive_numbers(numbers: list[int], threshold: int) -> int:
-    total = 0
+    """Count the number of instances in a list that is greater than the threshold   
+
+    Args:
+        numbers (list[int]): The list of numbers to look into
+        threshold (int): The threshold to check the value against
+
+    Returns:
+        int: the number of values that are in list greater than threshold
+    """
+    count = 0
     for num in numbers:
-        if num > 0 and num < threshold:
-            total += num
-        else:
-            total = 0
-    return total
+        if num > 0 and num >= threshold:
+            count += 1
+    return count
 
 
 def find_first_occurrence(s: str, target_char: str) -> int:
+    """Finding the first occurence of a character in a string
+
+    Args:
+        s (str): The string
+        target_char (str): The character being searched for
+
+    Returns:
+        int: The index at which the character appears
+    """
     index = -1
     for i in range(len(s)):
         if s[i] == target_char:
