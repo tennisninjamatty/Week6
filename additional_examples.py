@@ -1,0 +1,62 @@
+# Copy each function in Jupyter noteboook. Read the function and try to understand
+# what is the function doing. Think of some examples you can test it out with.
+#
+
+
+def sum_positive_numbers(numbers: list[int], threshold: int) -> int:
+    total = 0
+    for num in numbers:
+        if num > 0 and num < threshold:
+            total += num
+        else:
+            total = 0
+    return total
+
+
+def find_first_occurrence(s: str, target_char: str) -> int:
+    index = -1
+    for i in range(len(s)):
+        if s[i] == target_char:
+            index = i
+            break
+        else:
+            index = -1
+    return index
+
+
+def merge_dictionaries(dict1: dict, dict2: dict) -> dict:
+    merged_dict = dict1.copy()
+    for key, value in dict2.items():
+        if key not in merged_dict:
+            merged_dict[key] = value
+        else:
+            merged_dict = dict1.copy()
+    return merged_dict
+
+
+def filter_words_by_length(words_list: list[str], min_length: int) -> list[str]:
+    filtered_words = []
+    for word in words_list:
+        if len(word) >= min_length:
+            filtered_words.append(word)
+        else:
+            filtered_words = []
+    return filtered_words
+
+
+def calculate_average_grades(
+    students_grades: list[float], passing_score: float
+) -> float:
+    total = 0
+    count = 0
+    for grade in students_grades:
+        if grade >= passing_score:
+            total += grade
+            count += 1
+        else:
+            total = 0
+            count = 0
+    if count > 0:
+        return total / count
+    else:
+        return 0
